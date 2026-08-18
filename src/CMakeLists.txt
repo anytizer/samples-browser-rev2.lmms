@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(WavGraphViewer VERSION 1.0 LANGUAGES CXX)
+project(samples2 VERSION 1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -11,7 +11,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-add_executable(WavGraphViewer
+add_executable(samples2
     main.cpp
     mainwindow.h
     mainwindow.cpp
@@ -20,7 +20,7 @@ add_executable(WavGraphViewer
 )
 
 # Link Qt 5 libraries
-target_link_libraries(WavGraphViewer PRIVATE
+target_link_libraries(samples2 PRIVATE
     Qt5::Core
     Qt5::Gui
     Qt5::Widgets

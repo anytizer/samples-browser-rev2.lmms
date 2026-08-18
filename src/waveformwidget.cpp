@@ -163,7 +163,7 @@ void WaveformWidget::paintEvent(QPaintEvent* /*event*/) {
         }
     }
 
-    painter.setPen(QColor("#00ffcc"));
-    painter.setFont(QFont("Arial", 9, QFont::Bold));
-    painter.drawText(15, 20, QString("Waveform: %1").arg(m_data.fileName));
+    // painter.setPen(QColor("#00ffcc"));
+    // painter.setFont(QFont("Arial", 9, QFont::Bold));
+    // painter.drawText(15, 20, QString("Waveform: %1").arg(m_data.fileName));
 }

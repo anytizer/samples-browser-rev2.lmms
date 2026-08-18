@@ -132,7 +132,7 @@ MainWindow::MainWindow(QWidget* parent)
 
 void MainWindow::setupUI() {
     setFixedSize(800, 600);
-    setWindowTitle("WAV File Analyzer & Waveform Viewer");
+    setWindowTitle("Samples Scanner (rev2)");
 
     QWidget* centralWidget = new QWidget(this);
     QVBoxLayout* mainLayout = new QVBoxLayout(centralWidget);
@@ -152,7 +152,7 @@ void MainWindow::setupUI() {
     tableWidget = new CustomTableWidget(this);
     tableWidget->setColumnCount(6);
 
-    baseHeaders = QStringList{ ".wav File Name", "File Size (KB)", "Sample Rate", "Channels", "Bits/Sample", "Duration (ms)" };
+    baseHeaders = QStringList{ "File Name", "File Size (KB)", "Sample Rate", "Channels", "Bits/Sample", "Duration (ms)" };
     tableWidget->setHorizontalHeaderLabels(baseHeaders);
 
     tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
