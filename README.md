@@ -5,7 +5,9 @@ Second version of the Samples Browser for LMMS (as a plugin) that lists all .wav
 - Standalone version: complete
 - Plugin version: Work in progress!!
 
-# Compile as Standalone Application
+<img width="818" height="654" alt="screenshot" src="https://github.com/user-attachments/assets/0607f1cc-6a90-4755-98e9-cc3bc362b4d6" />
+
+## Compile as Standalone Application
 
 ```
 mkdir build
@@ -17,7 +19,7 @@ make
 ./samples2
 ```
 
-# Compile As a Plugin for LMMS
+## Compile As a Plugin for LMMS
 
 - Link `plugin` folder as lmms/plugins/Samples2.
 - Activate Samples2 plguin in CMakeLists.txt of lmms/plugins/.
@@ -27,7 +29,7 @@ make
 ln -s /PATH/TO/samples-browser-rev2.lmms/plugin /PATH/TO/lmms/plugins/Samples2
 ```
 
-# ToDo
+## ToDo
 
 - Sometimes (for some samples), graph has prominent extra vertical line(s)
     - at the begining
