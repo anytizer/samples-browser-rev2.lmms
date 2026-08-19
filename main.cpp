@@ -1,8 +1,9 @@
-#include "mainwindow.h"
 #include <QApplication>
 #include <QStyleFactory>
 #include <QPalette>
 #include <QColor>
+
+#include "src/mainwindow.h"
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
@@ -12,7 +13,7 @@ int main(int argc, char *argv[]) {
 
     // Create Dark Color Palette
     QPalette darkPalette;
-    darkPalette.setColor(QPalette::Window, QColor(30, 30, 30));
+    darkPalette.setColor(QPalette::Window, QColor(40, 40, 40));
     darkPalette.setColor(QPalette::WindowText, QColor(240, 240, 240));
     darkPalette.setColor(QPalette::Base, QColor(18, 18, 18));
     darkPalette.setColor(QPalette::AlternateBase, QColor(26, 26, 26));

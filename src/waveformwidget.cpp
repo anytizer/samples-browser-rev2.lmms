@@ -1,7 +1,8 @@
-#include "waveformwidget.h"
 #include <QPainter>
 #include <algorithm>
 #include <cmath>
+
+#include "waveformwidget.h"
 
 WaveformWidget::WaveformWidget(QWidget* parent) : QWidget(parent) {
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);

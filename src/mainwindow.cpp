@@ -1,4 +1,3 @@
-#include "mainwindow.h"
 #include <QHeaderView>
 #include <QFileDialog>
 #include <QDir>
@@ -10,6 +9,8 @@
 #include <QUrl>
 #include <QMediaContent>
 #include <algorithm>
+
+#include "mainwindow.h"
 
 static WaveformData processAudioFileOffThread(const QString& filePath, const QString& fileName, int targetColumns) {
     WaveformData result;
@@ -182,7 +183,7 @@ void MainWindow::setupUI() {
         "    font-weight: bold;"
         "}"
         "QTableView::item {"
-        "    padding: 5px;"
+        "    padding: 10px;"
         "}"
     );
 

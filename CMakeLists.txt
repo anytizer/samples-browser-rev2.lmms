@@ -1,3 +1,5 @@
+# For standalone application
+
 cmake_minimum_required(VERSION 3.16)
 project(samples2 VERSION 1.0 LANGUAGES CXX)
 
@@ -13,10 +15,10 @@ set(CMAKE_AUTOUIC ON)
 
 add_executable(samples2
     main.cpp
-    mainwindow.h
-    mainwindow.cpp
-    waveformwidget.h
-    waveformwidget.cpp
+    src/mainwindow.h
+    src/mainwindow.cpp
+    src/waveformwidget.h
+    src/waveformwidget.cpp
 )
 
 # Link Qt 5 libraries

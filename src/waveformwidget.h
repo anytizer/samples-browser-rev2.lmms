@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef WAVEFORMWIDGET_H
 #define WAVEFORMWIDGET_H
 

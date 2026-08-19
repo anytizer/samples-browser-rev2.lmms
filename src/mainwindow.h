@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -29,7 +31,16 @@ protected:
             return;
         }
         if (currentRow >= 0) {
-            if (event->key() == Qt::Key_Up || event->key() == Qt::Key_Down) {
+            if (
+                event->key() == Qt::Key_Up || 
+                event->key() == Qt::Key_Down || 
+                event->key() == Qt::Key_PageUp || 
+                event->key() == Qt::Key_PageDown || 
+
+                // non-functional keys at the moment
+                event->key() == Qt::Key_Home || 
+                event->key() == Qt::Key_End
+            ) {
                 emit rowActivatedByKeyboard(currentRow);
             }
             else if (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter) {
