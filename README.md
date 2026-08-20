@@ -21,12 +21,14 @@ make
 
 ## Compile As a Plugin for LMMS
 
-- Link `plugin` folder as lmms/plugins/Samples2.
-- Activate Samples2 plguin in CMakeLists.txt of lmms/plugins/.
-- Compile.
+- Link `plugin` folder as `[LMMS]/plugins/Samples2`.
+- Activate `Samples2` plguin in `[LMMS]/cmake/modules/PluginList.cmake`.
+- Compile LMMS.
+- Go to `Tools` > `Samples Browser`.
 
 ```
-ln -s /PATH/TO/samples-browser-rev2.lmms/plugin /PATH/TO/lmms/plugins/Samples2
+cd samples-browser-rev2.lmms
+ln -s plugin /PATH/TO/[LMMS]/plugins/Samples2
 ```
 
 ## ToDo
@@ -34,4 +36,5 @@ ln -s /PATH/TO/samples-browser-rev2.lmms/plugin /PATH/TO/lmms/plugins/Samples2
 - Sometimes (for some samples), graph has prominent extra vertical line(s)
     - at the begining
     - at end of the graph
-- Optional autoplay
+- Optional autoplay on row activation.
+- Upgrade to Qt6.
