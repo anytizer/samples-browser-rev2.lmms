@@ -10,7 +10,7 @@
 
 #include "ToolPluginView.h"
 
-//#include "WaveformWidget.h"
+#include "Samples2.h"
 
 namespace lmms
 {
@@ -24,7 +24,7 @@ namespace lmms::gui
 		private:
 			Q_OBJECT
 			
-			Samples2* m_plugin;
+			// Samples2* m_plugin;
 			// QString m_samplesDirectory;
 			// WaveformWidget* m_widget;
 			// QShortcut* f5Shortcut;

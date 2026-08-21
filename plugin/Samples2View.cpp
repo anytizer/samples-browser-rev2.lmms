@@ -3,33 +3,20 @@
 #include <QKeyEvent>
 #include <QDebug>
 
-#include "Samples2.h"
 #include "Samples2View.h"
-//#include "WaveformWidget.h"
-
-
-#include "Song.h"
-#include "Track.h"
-#include "SampleTrack.h"
-#include "PatternStore.h"
-#include "InstrumentTrack.h"
-#include "Instrument.h"
-
-#include "SamplePlayHandle.h"
-
+#include "WaveformWidget.h"
 
 namespace lmms::gui
 {
 	Samples2View::Samples2View(Samples2* plugin)
 	: ToolPluginView(plugin)
-	, m_plugin(plugin)
+	// , m_plugin(plugin)
 	{
 		this->setWindowTitle("Samples Browser - Rev2");
 		this->setMinimumSize(800, 600);
 		this->setFixedSize(800, 600);
     	this->resize(800, 600);
 		this->setAcceptDrops(true);
-		
 
 		QLayout* layout = this->layout();
 		if (layout) {
@@ -46,7 +33,7 @@ namespace lmms::gui
 		QVBoxLayout* mainLayout = new QVBoxLayout(this);
 		QVBoxLayout* tl = new QVBoxLayout();
 
-		// WaveformWidget* m_widget = new WaveformWidget(this);
+		WaveformWidget* m_widget = new WaveformWidget(this);
 		// m_widget->setMinimumHeight(140);
 
 		// tl->addWidget(m_widget, 1);

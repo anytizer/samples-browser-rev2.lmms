@@ -2,12 +2,14 @@
  * Samples2.cpp - Samples2.
  *
  */
-#include "Samples2.h"
-#include "Samples2View.h"
+#include <QString>
 
 #include "Song.h"
 #include "embed.h"
 #include "plugin_export.h"
+
+#include "Samples2.h"
+#include "Samples2View.h"
 
 namespace lmms
 {
@@ -17,7 +19,7 @@ namespace lmms
 		{
 			LMMS_STRINGIFY(PLUGIN_NAME),
 			"Samples Browser - Rev2",
-			QT_TRANSLATE_NOOP("PluginBrowser", "Fetch, Preview and Import .wav samples"),
+			QT_TRANSLATE_NOOP("PluginBrowser", "Fetch, Preview and Import various audio format samples"),
 			"@anytizer <anytizer@users.noreply.github.com>",
 			0x0100,
 			Plugin::Type::Tool,
@@ -40,6 +42,12 @@ namespace lmms
 	Samples2::Samples2()
 		: ToolPlugin(&samples2_plugin_descriptor, nullptr)
 	{
+	}
+
+
+	lmms::gui::PluginView* Samples2::instantiateView(QWidget* parent)
+	{
+		return new lmms::gui::Samples2View(this);
 	}
 
 } // namespace lmms

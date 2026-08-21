@@ -1,4 +1,4 @@
-/*
+/**
  * Samples2.h - header for Samples2
  */
 #pragma once
@@ -9,24 +9,27 @@
 
 namespace lmms
 {
-    using lmms::ToolPlugin;
-    using lmms::gui::PluginView;
+    class ToolPlugin;
 
+    namespace gui
+    {
+        class PluginView;
+        class Samples2View;
+    }
+}
+
+namespace lmms
+{
     class Samples2 : public ToolPlugin
     {
-        private:
-            Q_OBJECT
+        Q_OBJECT
 
         public:
             Samples2();
             QString nodeName() const override;
             void saveSettings(QDomDocument&, QDomElement&) override {}
-	        void loadSettings(const QDomElement&) override {}
+            void loadSettings(const QDomElement&) override {}
 
-            gui::PluginView* instantiateView(QWidget*) override
-            {
-                gui::Samples2View* plugin = new gui::Samples2View(this);
-                return plugin;
-            }
+            gui::PluginView* instantiateView(QWidget* parent) override;
     };
 } // namespace lmms

@@ -9,13 +9,15 @@ BUILD_PLUGIN(samples2
     Samples2.cpp
     Samples2View.cpp
 
+    CustomTableWidget.h
     WaveformData.h
-    #CustomTableWidget.h
-    #WaveformWidget.h
-    #WaveformWidget.cpp
+    WaveformWidget.cpp
+    WaveformWidget.h
 MOCFILES
     Samples2View.h
     Samples2.h
+    #CustomTableWidget.h
+    WaveformWidget.h
 EMBEDDED_RESOURCES
     *.png
 )

@@ -17,7 +17,7 @@
 namespace lmms::gui
 {
 
-class WaveformWidget : public QWidget {
+class WaveformWidget: public QWidget {
     Q_OBJECT
 public:
     explicit WaveformWidget(QWidget* parent = nullptr);
@@ -26,9 +26,9 @@ public:
     void setImportCallback(std::function<void(const QString&)> callback);
 
 signals:
-    void doubleClicked(){}
-    void openFolderRequested(){}
-    void playSoundRequested(){}
+    void doubleClicked();
+    void openFolderRequested();
+    void playSoundRequested();
     void filterTextChanged(const QString& text);
 
 protected:
