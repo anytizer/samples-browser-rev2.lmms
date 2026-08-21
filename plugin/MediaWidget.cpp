@@ -15,6 +15,15 @@
 #include "MediaWidget.h"
 #include "CustomTableWidget.h"
 
+#include "Song.h"
+#include "Track.h"
+#include "SampleTrack.h"
+#include "PatternStore.h"
+#include "InstrumentTrack.h"
+#include "Instrument.h"
+
+#include "SamplePlayHandle.h"
+
 namespace lmms::gui
 {
 
@@ -135,6 +144,7 @@ MediaWidget::MediaWidget(QWidget* parent):
     mediaPlayer->setVolume(100);
 
     setupUI();
+    this->waveformWidget->setImportCallback(MediaWidget::callback2);
 }
 
 void MediaWidget::setupUI() {
@@ -152,9 +162,9 @@ void MediaWidget::setupUI() {
     connect(waveformWidget, &WaveformWidget::openFolderRequested, this, &MediaWidget::openSamplesFolderAndScan);
     connect(waveformWidget, &WaveformWidget::playSoundRequested, this, &MediaWidget::playSelectedSample);
 
-    waveformWidget->setImportCallback([this](const QString& fileName) {
-        QMessageBox::information(this, "Sample Imported", QString("Successfully imported sample file:\n%1").arg(fileName));
-    });
+    // waveformWidget->setImportCallback([this](const QString& fileName) {
+    //     QMessageBox::information(this, "Sample Imported", QString("Successfully imported sample file:\n%1").arg(fileName));
+    // });
 
     tableWidget = new CustomTableWidget(this);
     tableWidget->setColumnCount(6);
@@ -215,8 +225,6 @@ void MediaWidget::setupUI() {
 
     mainLayout->addWidget(waveformWidget, 2);
     mainLayout->addWidget(tableWidget, 4);
-
-    //setCentralWidget(centralWidget);
 }
 
 void MediaWidget::openSamplesFolderAndScan() {
@@ -389,6 +397,30 @@ void MediaWidget::onEnterPressed(int row) {
     QTableWidgetItem* item = tableWidget->item(row, 0);
     if (!item) return;
     onRowDoubleClicked(row, 0);
+}
+
+
+
+/**
+ * Add a beat pattern, instantly
+ */
+void MediaWidget::callback2(QString sample)
+{
+    //QMessageBox::information(this, "Sample Imported", QString("Successfully imported sample file:\n%1").arg(fileName));
+    
+    PatternStore* ps = Engine::patternStore();
+
+    QString afp = "audiofileprocessor";
+    InstrumentTrack* innerTrack = new InstrumentTrack(ps);
+    innerTrack->loadInstrument(afp);
+    innerTrack->setName(QFileInfo(sample).baseName());
+
+    QDomDocument preset;
+    QDomElement element = preset.createElement(afp);
+    element.setAttribute("src", sample);
+    innerTrack->instrument()->restoreState(element);
+
+    ps->trackUpdated();
 }
 
 }

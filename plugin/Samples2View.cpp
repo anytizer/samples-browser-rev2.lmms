@@ -1,6 +1,8 @@
 #include <QLayout>
 #include <QDomElement>
 #include <QKeyEvent>
+#include <QDomDocument>
+#include <QFileInfo>
 #include <QDebug>
 
 #include "Samples2View.h"
@@ -44,7 +46,6 @@ namespace lmms::gui
 
 
 
-		
 		QWidget* pw = parentWidget();
 		if (pw!=nullptr)
 		{

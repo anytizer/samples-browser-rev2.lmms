@@ -8,6 +8,8 @@
 #include <QWidget>
 #include <QShortcut>
 #include <QKeyEvent>
+#include <QDomDocument>
+#include <QFileInfo>
 #include <QMediaPlayer>
 #include "WaveformWidget.h"
 #include "CustomTableWidget.h"
@@ -15,13 +17,14 @@
 namespace lmms::gui
 {
 
-
 class MediaWidget : public QWidget {
     Q_OBJECT
 
 public:
     MediaWidget(QWidget* parent = nullptr);
     ~MediaWidget() = default;
+
+    static void callback2(QString sample);
 
 private slots:
     void onRowClicked(int row, int column);

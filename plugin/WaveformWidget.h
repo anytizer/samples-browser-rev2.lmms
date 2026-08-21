@@ -23,6 +23,7 @@ public:
     explicit WaveformWidget(QWidget* parent = nullptr);
     void setWaveformData(const WaveformData& data);
     void clear();
+
     void setImportCallback(std::function<void(const QString&)> callback);
 
 signals:
