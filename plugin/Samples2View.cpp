@@ -44,8 +44,7 @@ namespace lmms::gui
 
 
 
-
-
+		
 		QWidget* pw = parentWidget();
 		if (pw!=nullptr)
 		{

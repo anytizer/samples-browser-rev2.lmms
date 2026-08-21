@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef MediaWidget_H
-#define MediaWidget_H
+#ifndef LMMS_GUI_MEDIAWIDGET_H
+#define LMMS_GUI_MEDIAWIDGET_H
 
 #include <QTableWidget>
 #include <QVBoxLayout>
@@ -48,6 +48,6 @@ private:
     Qt::SortOrder currentSortOrder;
 };
 
-#endif // MediaWidget_H
+#endif // LMMS_GUI_MEDIAWIDGET_H
 
 }

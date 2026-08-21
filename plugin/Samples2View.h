@@ -23,17 +23,6 @@ namespace lmms::gui
 	{
 		private:
 			Q_OBJECT
-			
-			// Samples2* m_plugin;
-			// QString m_samplesDirectory;
-			// WaveformWidget* m_widget;
-			// QShortcut* f5Shortcut;
-			// QMediaPlayer* mediaPlayer;
-			// QString lastSelectedFolderPath;
-			// QString currentSelectedFilePath;
-			// QStringList baseHeaders;
-			// int currentSortColumn = -1;
-			// Qt::SortOrder currentSortOrder;
 	
 		public:
 			Samples2View(Samples2* plugin);

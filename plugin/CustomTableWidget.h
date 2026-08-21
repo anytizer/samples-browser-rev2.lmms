@@ -16,7 +16,7 @@ class CustomTableWidget : public QTableWidget {
     Q_OBJECT
 public:
     CustomTableWidget(QWidget* parent = nullptr) : QTableWidget(parent) {
-        this->setFixedSize(800, 640);
+        this->setFixedSize(800, 660);
     }
 
 signals:
@@ -28,24 +28,25 @@ protected:
     void keyPressEvent(QKeyEvent* event) override {
         QTableWidget::keyPressEvent(event);
         int currentRow = this->currentRow();
-        if (event->key() == Qt::Key_Escape) {
+        int key = event->key();
+        if (key == Qt::Key_Escape) {
             emit escapePressed();
             return;
         }
         if (currentRow >= 0) {
             if (
-                event->key() == Qt::Key_Up || 
-                event->key() == Qt::Key_Down || 
-                event->key() == Qt::Key_PageUp || 
-                event->key() == Qt::Key_PageDown || 
+                key == Qt::Key_Up || 
+                key == Qt::Key_Down || 
+                key == Qt::Key_PageUp || 
+                key == Qt::Key_PageDown || 
 
                 // non-functional keys at the moment
-                event->key() == Qt::Key_Home || 
-                event->key() == Qt::Key_End
+                key == Qt::Key_Home || 
+                key == Qt::Key_End
             ) {
                 emit rowActivatedByKeyboard(currentRow);
             }
-            else if (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter) {
+            else if (key == Qt::Key_Return || key == Qt::Key_Enter) {
                 emit enterPressedOnRow(currentRow);
             }
         }

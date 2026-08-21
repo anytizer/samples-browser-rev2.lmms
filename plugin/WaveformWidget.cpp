@@ -31,9 +31,9 @@ WaveformWidget::WaveformWidget(QWidget* parent)
         "    background-color: #2a2a2a;"
         "    color: #ffffff;"
         "    border: 1px solid #444444;"
-        "    border-radius: 4px;"
-        "    padding: 4px 8px;"
-        "    font-size: 11px;"
+        "    border-radius: 5px;"
+        "    padding: 5px 5px;"
+        "    font-size: 12px;"
         "    min-width: 140px;"
         "}"
         "QLineEdit:focus {"
@@ -46,23 +46,26 @@ WaveformWidget::WaveformWidget(QWidget* parent)
     btnPlaySound = new QPushButton("Play Sound", this);
     btnImportSample = new QPushButton("Import Sample", this);
 
-    // Sky blue styling
+    // styling
     QString buttonStyle = 
         "QPushButton {"
-        "    background-color: #87CEEB;"
-        "    color: #000000;"
-        "    border: none;"
-        "    border-radius: 4px;"
-        "    padding: 6px 12px;"
+        "    background-color: #2b2b2b;"
+        "    color: #b0b0b0;"
+        "    border: 1px solid #1a1a1a;"
+        "    border-radius: 5px;"
+        "    padding: 7px 7px;"
         "    font-weight: bold;"
-        "    font-size: 11px;"
+        "    font-size: 12px;"
         "}"
         "QPushButton:hover {"
-        "    background-color: #00BFFF;"
+        "    background-color: #383838;"
+        "    color: #ffffff;"
+        "    border: 1px solid #484848;"
         "}"
         "QPushButton:pressed {"
-        "    background-color: #4682B4;"
+        "    background-color: #1f1f1f;"
         "    color: #ffffff;"
+        "    border: 1px solid #111111;"
         "}";
 
     btnOpenFolder->setStyleSheet(buttonStyle);
@@ -71,7 +74,7 @@ WaveformWidget::WaveformWidget(QWidget* parent)
 
     // Overlay layout at bottom-right (Input added before Open Folder)
     QHBoxLayout* buttonLayout = new QHBoxLayout();
-    buttonLayout->setContentsMargins(10, 10, 15, 12);
+    buttonLayout->setContentsMargins(8, 8, 8, 8);
     buttonLayout->setSpacing(8);
     buttonLayout->addStretch();
     buttonLayout->addWidget(txtSearchFilter);

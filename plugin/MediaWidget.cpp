@@ -127,7 +127,6 @@ static WaveformData processAudioFileOffThread(const QString& filePath, const QSt
 
 
 MediaWidget::MediaWidget(QWidget* parent):
-    //: QMediaWidget(parent),
     lastSelectedFolderPath(QDir::homePath()),
     currentSortColumn(-1),
     currentSortOrder(Qt::AscendingOrder) {
@@ -160,7 +159,7 @@ void MediaWidget::setupUI() {
     tableWidget = new CustomTableWidget(this);
     tableWidget->setColumnCount(6);
 
-    baseHeaders = QStringList{ "File Name", "File Size (KB)", "Sample Rate", "Channels", "Bits/Sample", "Duration (ms)" };
+    baseHeaders = QStringList{ "File Name", "Size (KB)", "Sample Rate", "Channels", "Bits/Sample", "Duration (ms)" };
     tableWidget->setHorizontalHeaderLabels(baseHeaders);
 
     tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -185,8 +184,8 @@ void MediaWidget::setupUI() {
         "QHeaderView::section {"
         "    background-color: #1f1f1f;"
         "    color: #ffffff;"
-        "    padding: 6px;"
-        "    border: 1px solid #2c2c2c;"
+        "    padding: 10px;"
+        "    border: 0px solid #2c2c2c;"
         "    font-weight: bold;"
         "}"
         "QTableView::item {"

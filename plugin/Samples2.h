@@ -15,8 +15,6 @@ namespace lmms
     {
         class PluginView;
         class Samples2View;
-        // class MediaWidget;
-        // class CustomTableWidget;
     }
 }
 
