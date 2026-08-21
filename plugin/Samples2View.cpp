@@ -4,13 +4,12 @@
 #include <QDebug>
 
 #include "Samples2View.h"
-#include "WaveformWidget.h"
+#include "MediaWidget.h"
 
 namespace lmms::gui
 {
 	Samples2View::Samples2View(Samples2* plugin)
 	: ToolPluginView(plugin)
-	// , m_plugin(plugin)
 	{
 		this->setWindowTitle("Samples Browser - Rev2");
 		this->setMinimumSize(800, 600);
@@ -31,16 +30,17 @@ namespace lmms::gui
 		delete this->layout();
 
 		QVBoxLayout* mainLayout = new QVBoxLayout(this);
+		mainLayout->setContentsMargins(0, 0, 0, 0);
+        mainLayout->setSpacing(0);
+
 		QVBoxLayout* tl = new QVBoxLayout();
+		tl->setContentsMargins(0, 0, 0, 0);
+        tl->setSpacing(0);
 
-		WaveformWidget* m_widget = new WaveformWidget(this);
-		// m_widget->setMinimumHeight(140);
+		MediaWidget* m_widget = new MediaWidget(this);
 
-		// tl->addWidget(m_widget, 1);
-		mainLayout->addLayout(tl);
-
-
-
+		tl->addWidget(m_widget, 1);
+		mainLayout->addLayout(tl, 1);
 
 
 

@@ -19,6 +19,9 @@ namespace lmms::gui
 
 WaveformWidget::WaveformWidget(QWidget* parent)
 {
+    this->setContentsMargins(0, 0, 0, 0);
+    this->setFixedSize(800, 140);
+
     // Create Search/Filter Input
     txtSearchFilter = new QLineEdit(this);
     txtSearchFilter->setPlaceholderText("Filter files...");

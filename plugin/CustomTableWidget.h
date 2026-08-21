@@ -1,3 +1,8 @@
+#pragma once
+
+#ifndef LMMS_GUI_CUSTOMTABLEWIDGET_H
+#define LMMS_GUI_CUSTOMTABLEWIDGET_H
+
 #include <QTableWidget>
 #include <QVBoxLayout>
 #include <QWidget>
@@ -10,12 +15,14 @@ namespace lmms::gui
 class CustomTableWidget : public QTableWidget {
     Q_OBJECT
 public:
-    CustomTableWidget(QWidget* parent = nullptr) : QTableWidget(parent) {}
+    CustomTableWidget(QWidget* parent = nullptr) : QTableWidget(parent) {
+        this->setFixedSize(800, 640);
+    }
 
 signals:
     void rowActivatedByKeyboard(int row);
-    void enterPressedOnRow(int row){}
-    void escapePressed() {}
+    void enterPressedOnRow(int row);
+    void escapePressed();
 
 protected:
     void keyPressEvent(QKeyEvent* event) override {
@@ -46,3 +53,5 @@ protected:
 };
 
 }
+
+#endif
