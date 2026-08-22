@@ -144,7 +144,9 @@ MediaWidget::MediaWidget(QWidget* parent):
     mediaPlayer->setVolume(100);
 
     setupUI();
-    this->waveformWidget->setImportCallback(MediaWidget::callback2);
+    this->waveformWidget->setImportCallback([this](auto... args) {
+        this->callback2(args...);
+    });
 }
 
 void MediaWidget::setupUI() {
@@ -399,25 +401,24 @@ void MediaWidget::onEnterPressed(int row) {
     onRowDoubleClicked(row, 0);
 }
 
-
-
 /**
- * Add a beat pattern, instantly
+ * Add to beat pattern editor
  */
 void MediaWidget::callback2(QString sample)
 {
-    //QMessageBox::information(this, "Sample Imported", QString("Successfully imported sample file:\n%1").arg(fileName));
+    QString src = QString("%1/%2").arg(lastSelectedFolderPath).arg(sample);
+    //QMessageBox::information(nullptr, "Sample Imported", src);
     
     PatternStore* ps = Engine::patternStore();
 
     QString afp = "audiofileprocessor";
     InstrumentTrack* innerTrack = new InstrumentTrack(ps);
     innerTrack->loadInstrument(afp);
-    innerTrack->setName(QFileInfo(sample).baseName());
+    innerTrack->setName(QFileInfo(src).baseName());
 
     QDomDocument preset;
     QDomElement element = preset.createElement(afp);
-    element.setAttribute("src", sample);
+    element.setAttribute("src", src);
     innerTrack->instrument()->restoreState(element);
 
     ps->trackUpdated();

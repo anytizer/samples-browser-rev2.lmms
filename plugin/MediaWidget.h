@@ -24,7 +24,7 @@ public:
     MediaWidget(QWidget* parent = nullptr);
     ~MediaWidget() = default;
 
-    static void callback2(QString sample);
+    void callback2(QString sample);
 
 private slots:
     void onRowClicked(int row, int column);
